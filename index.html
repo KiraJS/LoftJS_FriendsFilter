@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friends Filter</title>
+  <link href="css/style.css" rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Fira+Sans:500,300' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div class="container clearfix">
+    <div class="popup">
+      <header class="popup__header clearfix">
+        <h1>Выберите друзей</h1>
+      </header>
+      <div class="popup__content">
+        <div class="friends clearfix">
+          <div class="friends__item">
+            <label for="search" class="friends__search"><input id="search" type="text" placeholder="Начните вводить имя друга"></label>
+            <div class="friends__inner">
+              <h2 class="friends__title">Ваши друзья</h2>
+              <ul class="friends__list">
+                <li class="friend">
+                  <div class="friend__img">
+                      <img src="" alt="">
+                  </div>
+                  <span class="friend__name">Александр Шатулов</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="friends__item">
+            <label for="search" class="friends__search"><input id="search" type="text" placeholder="Название"></label>
+            <div class="friends__inner">
+              <h2 class="friends__title">Друзья в списке</h2>
+              <ul class="friends__list">
+                <li class="friend">
+                  <div class="friend__img">
+                      <img src="" alt="">
+                  </div>
+                  <span class="friend__name">Александр Шатулов</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="popup__footer clearfix">
+        <button class="popup__action">Сохранить</button>
+      </footer>
+    </div>
+  </div>
+<script src="js/main.js"></script>
+</body>
+</html>

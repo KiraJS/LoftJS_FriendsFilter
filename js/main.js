@@ -1,3 +1,5 @@
+(function(){
+  'use strict';
 new Promise(function(resolve) {
   if(document.readyState === 'complete') {
     redolve();
@@ -25,7 +27,7 @@ new Promise(function(resolve) {
     })
   })
 }).then(function(response){
-  console.log(response.response);
+//  console.log(response.response);
   for (var i = 0; i < response.response.length; i++){
     var friendsList = document.getElementById('friendsList');
     var friendItem = document.createElement("li");
@@ -46,3 +48,27 @@ new Promise(function(resolve) {
     friendItem.appendChild(friendAdd);
   }
 })
+document.getElementById('friendsSelect');
+friendsList.addEventListener('click', selectFriend, true);
+friendsSelect.addEventListener('click', removeSelectFriend, true);
+
+
+// Function to create new list
+function selectFriend(e){
+  if(e.target.className == "friend--add"){
+    var selectedFriend = e.target.parentNode;
+    friendsSelect.appendChild(selectedFriend);
+    selectedFriend.children[2].style.transform = "rotate(45deg)";
+    console.log(selectedFriend.children[2])
+  }
+}
+// Function to remove new list
+function removeSelectFriend(e){
+  if(e.target.className == "friend--add"){
+    var selectedFriend = e.target.parentNode;
+    friendsList.appendChild(selectedFriend)
+    console.log(selectedFriend)
+    selectedFriend.children[2].style.transform = "rotate(90deg)";
+  }
+}
+})();

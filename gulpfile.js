@@ -23,7 +23,7 @@ gulp.task('webserver', function(){
 
 //watch
 gulp.task('watch', function () {
-  gulp.watch('**/*.js', ['js']);
+//  gulp.watch('**/*.js', ['js']);
   gulp.watch('**/*.scss', ['scss']);
 })
 

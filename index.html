@@ -17,22 +17,24 @@
       </header>
       <div class="popup__content">
         <div class="friends clearfix">
-          <div class="friends__item">
+          <div class="friends__search-container">
             <label for="search" class="friends__search">
               <input id="search" type="text" placeholder="Начните вводить имя друга">
             </label>
+            <label for="search" class="friends__search">
+              <input id="newlistSearch" type="text" placeholder="Название">
+            </label>
+            <div class="friends__title">Ваши друзья</div>
+            <div class="friends__title">Друзья в списке</div>
+          </div>
+          <div class="friends__item">
             <div class="friends__inner">
-              <h2 class="friends__title">Ваши друзья</h2>
               <ul class="friends__list" id="friendsList">
               </ul>
             </div>
           </div>
           <div class="friends__item">
-            <label for="search" class="friends__search">
-              <input id="search" type="text" placeholder="Название">
-            </label>
             <div class="friends__inner">
-              <h2 class="friends__title">Друзья в списке</h2>
               <ul class="friends__list" id="friendsSelect">
               </ul>
             </div>

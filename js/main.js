@@ -27,20 +27,21 @@ new Promise(function(resolve) {
     })
   })
 }).then(function(response){
-//  console.log(response.response);
-  for (var i = 0; i < response.response.length; i++){
+  var data = response.response;
+  for (var i = 0; i < data.length; i++){
     var friendsList = document.getElementById('friendsList');
     var friendItem = document.createElement("li");
     var friendImgContainer = document.createElement("div");
     var friendImg = document.createElement("img");
     var friendName = document.createElement("span");
     var friendAdd = document.createElement("span");
+    friendItem.setAttribute("draggable", "true");
     friendItem.className = "friend";
     friendAdd.className = "friend--add";
     friendImgContainer.className = "friend__img";
     friendName.className = "friend__name";
-    friendImg.src = response.response[i].photo_50;
-    friendName.innerHTML = response.response[i].first_name + " " + response.response[i].last_name;
+    friendImg.src = data[i].photo_50;
+    friendName.innerHTML = data[i].first_name + " " + data[i].last_name;
     friendsList.appendChild(friendItem);
     friendItem.appendChild(friendImgContainer);
     friendImgContainer.appendChild(friendImg);
@@ -48,9 +49,14 @@ new Promise(function(resolve) {
     friendItem.appendChild(friendAdd);
   }
 })
-document.getElementById('friendsSelect');
+var friendsSelect = document.getElementById('friendsSelect');
+var search = document.getElementById('search');
+var newlistSearch = document.getElementById('newlistSearch');
 friendsList.addEventListener('click', selectFriend, true);
 friendsSelect.addEventListener('click', removeSelectFriend, true);
+search.addEventListener('input', searchFriend);
+newlistSearch.addEventListener('input', searchNewFriends);
+
 
 
 // Function to create new list
@@ -71,4 +77,27 @@ function removeSelectFriend(e){
     selectedFriend.children[2].style.transform = "rotate(90deg)";
   }
 }
+// Function to sort friendsList
+function searchFriend(){
+  var searchValue = search.value;
+  for(var prop in friendsList.children){
+    if(friendsList.children[prop].children[1].innerHTML.toLowerCase().indexOf(searchValue.toLowerCase()) == -1){
+        friendsList.children[prop].style.display = "none";
+    } else{
+      friendsList.children[prop].style.display = "block";
+    }
+  }
+}
+  // Function to sort friendsList
+  function searchNewFriends(){
+    var searchValue = newlistSearch.value;
+    for(var prop in friendsSelect.children){
+      if(friendsSelect.children[prop].children[1].innerHTML.toLowerCase().indexOf(searchValue.toLowerCase()) == -1){
+          friendsSelect.children[prop].style.display = "none";
+      } else{
+        friendsSelect.children[prop].style.display = "block";
+      }
+    }
+  }
+
 })();

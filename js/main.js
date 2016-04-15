@@ -3,13 +3,19 @@
 
   var friendsList = document.getElementById('friendsList');
   var friendsSelect = document.getElementById('friendsSelect');
+  var popupAction = document.getElementById('popupAction');
   var search = document.getElementById('search');
   var newlistSearch = document.getElementById('newlistSearch');
+  var localFriendList = [];
+  var localFriendsSelectList = [];
+
 
   friendsList.addEventListener('click', selectFriend, true);
   friendsSelect.addEventListener('click', removeSelectFriend, true);
   search.addEventListener('input', searchFriend);
   newlistSearch.addEventListener('input', searchNewFriends);
+  popupAction.addEventListener('click', saveToLocal, true);
+  popupAction.addEventListener('click', saveSelectToLocal, true);
 
   // Interface for get FriendsList from VK
   new Promise(function(resolve) {
@@ -127,4 +133,22 @@
     friendsList.insertBefore(dragged, friendsList.firstChild);
     dragged.children[2].style.transform = "rotate(90deg)";
   }, false);
+  // Save to localStorage
+
+  function Friend(name, photo){
+    this.name = name;
+    this.photo = photo;
+  }
+  function saveToLocal(){
+    for(var i = 0; i < friendsList.children.length; i++){
+      localFriendList.push(new Friend(friendsList.children[i].textContent, friendsList.children[i].children[0].children[0].getAttribute("src")));
+    }
+    localStorage.setItem('localFriendList', JSON.stringify(localFriendList));
+  }
+  function saveSelectToLocal(){
+    for(var i = 0; i < friendsSelect.children.length; i++){
+      localFriendsSelectList.push(new Friend(friendsSelect.children[i].textContent, friendsSelect.children[i].children[0].children[0].getAttribute("src")));
+    }
+    localStorage.setItem('localFriendsSelectList', JSON.stringify(localFriendsSelectList));
+}
 })();

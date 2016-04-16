@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  color: #4f4f4f;
+  font-family: 'Fira Sans', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 300; }
+
+h1 {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 0; }
+
+h2 {
+  font-size: 12px;
+  font-weight: 500; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+.clearfix:after {
+  display: table;
+  clear: both;
+  content: ""; }
+
+.container {
+  position: relative;
+  width: 960px;
+  min-height: 665px;
+  margin: auto; }
+
+.popup {
+  position: absolute;
+  top: 133px;
+  left: 170px;
+  width: 620px;
+  height: 440px;
+  margin: auto;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); }
+
+.popup__header {
+  height: 45px;
+  margin-top: -11px;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+  background: #ff8663; }
+
+.popup__content {
+  height: 360px; }
+
+.popup__footer {
+  height: 45px;
+  padding: 7px;
+  border-radius: 0 0 10px 10px;
+  background: #f0f0f0; }
+
+.popup__action {
+  float: right;
+  width: 85px;
+  height: 30px;
+  border: none;
+  border-radius: 10px;
+  background: #ff8663; }
+  .popup__action:hover {
+    background: #fa9477; }
+  .popup__action:active {
+    background: #fb7852; }
+  .popup__action:focus {
+    outline: none; }
+
+.friends__item {
+  float: left;
+  overflow: auto;
+  width: 50%; }
+
+.friends__search {
+  z-index: 10;
+  display: block;
+  float: left;
+  width: 50%;
+  height: 45px;
+  padding: 10px;
+  background: #f0f0f0; }
+
+.friends__search input {
+  width: 285px;
+  height: 27px;
+  padding: 10px;
+  border: none;
+  border-radius: 15px; }
+  .friends__search input:focus {
+    outline: none; }
+
+.friends__title {
+  float: left;
+  width: 50%;
+  height: 45px;
+  padding-top: 10px;
+  padding-left: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 25px; }
+
+.friends__list {
+  position: relative;
+  height: 304px;
+  padding: 10px;
+  list-style: none; }
+
+.friends__inner {
+  height: 270px;
+  padding: 10px; }
+
+.friend {
+  position: relative;
+  width: 280px;
+  height: 58px;
+  padding-top: 5px;
+  padding-left: 10px;
+  border-bottom: 1px solid #f0f0f0; }
+  .friend:hover {
+    background-color: #f0f0f0; }
+
+.friend--add {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: url("../img/icon_cross.png");
+  background-repeat: no-repeat;
+  background-position: 95% 50%; }
+
+.friend__img {
+  display: inline-block;
+  margin-right: 10px;
+  vertical-align: middle; }
+
+.friend__img img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%; }
+
+.friend__name {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 500; }
